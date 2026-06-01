@@ -6,27 +6,15 @@ if (toggle && nav) {
     toggle.setAttribute('aria-expanded', String(open));
   });
   nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
   }));
 }
 document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
-const quoteForm = document.querySelector('[data-quote-form]');
-if (quoteForm) {
-  quoteForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const data = new FormData(quoteForm);
-    const body = [
-      'Hi Mobile Mech,', '', 'I would like to request a quote.', '',
-      `Name: ${data.get('name') || ''}`,
-      `Phone: ${data.get('phone') || ''}`,
-      `Email: ${data.get('email') || ''}`,
-      `Service: ${data.get('service') || ''}`,
-      `Vehicle: ${data.get('vehicle') || ''}`,
-      `Location: ${data.get('location') || ''}`, '',
-      'Details:', data.get('details') || ''
-    ].join('\n');
-    const subject = encodeURIComponent(`Quote request: ${data.get('service') || 'Mobile mechanic service'}`);
-    window.location.href = `mailto:nzmobilemech@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
-  });
-}
+const params = new URLSearchParams(window.location.search);
+const requestedService = params.get('service');
+document.querySelectorAll('select[name="service"]').forEach((select) => {
+  if (!requestedService) return;
+  const options = Array.from(select.options);
+  const match = options.find((option) => option.text.toLowerCase() === requestedService.toLowerCase());
+  if (match) select.value = match.value;
+});
