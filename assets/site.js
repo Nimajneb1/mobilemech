@@ -18,3 +18,44 @@ document.querySelectorAll('select[name="service"]').forEach((select) => {
   const match = options.find((option) => option.text.toLowerCase() === requestedService.toLowerCase());
   if (match) select.value = match.value;
 });
+
+
+document.querySelectorAll('[data-quote-form]').forEach((form) => {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const status = form.parentElement.querySelector('[data-form-status]');
+  const originalButtonHtml = submitButton ? submitButton.innerHTML : '';
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+    if (status) {
+      status.textContent = '';
+      status.classList.remove('is-error');
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) throw new Error('Form submission failed');
+
+      const selectedService = form.querySelector('select[name="service"]')?.value || '';
+      const conversion = selectedService.toLowerCase().includes('diagnostic') ? 'diagnostic' : 'service';
+      window.location.assign(`thank-you.html?conversion=${encodeURIComponent(conversion)}`);
+    } catch (error) {
+      if (status) {
+        status.textContent = 'Your request could not be sent. Please try again or call 020 4110 4094.';
+        status.classList.add('is-error');
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHtml;
+      }
+    }
+  });
+});
