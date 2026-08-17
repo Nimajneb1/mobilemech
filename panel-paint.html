@@ -59,19 +59,45 @@
 <main id="main">
 <section class="page-hero"><div class="container"><p class="eyebrow">Auckland panel and paint repairs</p><h1>Panel and paint repairs.</h1><p>Car panel repairs, scratch and scuff repairs, paint refinishing and resprays across Auckland, with vehicle pick-up and drop-off available for panel and paint work.</p></div></section>
 <section class="section"><div class="container ev-grid"><div><p class="eyebrow">Professional panel and paint</p><h2>From scratches and scuffs to larger panel repairs.</h2><p class="lead">Mobile Mech provides panel and paint repairs across Auckland for everyday bodywork damage, including scratches, scuffs, bumper damage, damaged panels, faded paint and larger cosmetic repairs. We use professional paint systems, equipment and 2K clear coats to produce a durable, high-quality finish.</p><p>For panel and paint jobs, we can arrange to pick up your vehicle and drop it back to you when the work is completed. This makes it easier to organise bodywork repairs without having to take time out of your day to deliver and collect the car yourself.</p><ul class="tick-list"><li>Car scratch and scuff repairs</li><li>Bumper and damaged panel repairs</li><li>Sun-faded paint correction and refinishing</li><li>Panel preparation, repainting and colour matching</li><li>Full and partial vehicle resprays</li><li>Vehicle pick-up and drop-off for panel and paint work</li></ul><a class="btn btn-primary" href="booking.html?service=Panel%20and%20paint">Book panel and paint work <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></div><aside class="price-panel"><p class="package-name">Auckland panel repairs</p><h2>Send us the vehicle details.</h2><p>Tell us what has been damaged and include clear photos where possible. We can assess the panel and paint requirements, confirm the work involved and organise vehicle collection and return where required.</p><a class="btn btn-secondary" href="booking.html?service=Panel%20and%20paint">Request a panel and paint quote</a></aside></div></section>
-<section class="section section-soft" aria-labelledby="panel-paint-gallery">
+<section class="section section-soft panel-paint-slideshow-section" aria-labelledby="panel-paint-gallery">
   <div class="container">
     <div class="section-title">
       <p class="eyebrow">Panel repair examples</p>
       <h2 id="panel-paint-gallery">Panel and paint work in Auckland.</h2>
-      <p>Examples of vehicle body damage and repaired finishes. Actual repair methods and pricing depend on the vehicle, paint colour, damage and the condition of the affected panel.</p>
+      <p>View examples of vehicle body damage and completed panel and paint repairs. Repair methods and pricing depend on the vehicle, paint colour, damage and condition of the affected panel.</p>
     </div>
-    <div class="gallery-grid panel-paint-gallery-grid">
-      <figure class="gallery-item"><img src="assets/photos/gallery/panel-paint-front-damage-1.jpg" alt="White BMW front guard showing scratches and panel damage before repair" loading="lazy"><figcaption>Panel damage and scratches before repair</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/photos/gallery/panel-paint-front-complete-1.jpg" alt="White BMW front corner after panel and paint repair" loading="lazy"><figcaption>Completed front panel and paint finish</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/photos/gallery/panel-paint-side-repair-1.jpg" alt="Grey car side panel with visible scratches and paint damage" loading="lazy"><figcaption>Scratch and paint damage assessment</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/photos/gallery/panel-paint-front-repair-1.jpg" alt="Grey car front bumper and panel area after bodywork repair" loading="lazy"><figcaption>Front bumper and panel repair</figcaption></figure>
-      <figure class="gallery-item"><img src="assets/photos/gallery/panel-paint-refinished-1.jpg" alt="Grey vehicle front corner showing completed panel and paint refinishing" loading="lazy"><figcaption>Refinished panel and paint work</figcaption></figure>
+    <div class="panel-paint-slideshow" data-slideshow aria-label="Panel and paint repair examples">
+      <div class="panel-paint-slides">
+        <figure class="panel-paint-slide is-active">
+          <img src="assets/photos/gallery/panel-paint-front-damage-1.jpg" alt="White BMW front guard showing scratches and panel damage before repair">
+          <figcaption>Panel damage and scratches before repair</figcaption>
+        </figure>
+        <figure class="panel-paint-slide">
+          <img src="assets/photos/gallery/panel-paint-front-complete-1.jpg" alt="White BMW front corner after panel and paint repair">
+          <figcaption>Completed front panel and paint finish</figcaption>
+        </figure>
+        <figure class="panel-paint-slide">
+          <img src="assets/photos/gallery/panel-paint-side-repair-1.jpg" alt="Grey car side panel with scratches and paint damage">
+          <figcaption>Scratch and paint damage assessment</figcaption>
+        </figure>
+        <figure class="panel-paint-slide">
+          <img src="assets/photos/gallery/panel-paint-front-repair-1.jpg" alt="Grey car front bumper and panel area after bodywork repair">
+          <figcaption>Front bumper and panel repair</figcaption>
+        </figure>
+        <figure class="panel-paint-slide">
+          <img src="assets/photos/gallery/panel-paint-refinished-1.jpg" alt="Grey vehicle front corner showing completed panel and paint refinishing">
+          <figcaption>Refinished panel and paint work</figcaption>
+        </figure>
+      </div>
+      <button class="panel-paint-slide-btn panel-paint-slide-prev" type="button" aria-label="Previous panel and paint photo">&#10094;</button>
+      <button class="panel-paint-slide-btn panel-paint-slide-next" type="button" aria-label="Next panel and paint photo">&#10095;</button>
+      <div class="panel-paint-slide-dots" aria-label="Choose a panel and paint photo">
+        <button type="button" class="is-active" aria-label="Show photo 1" aria-current="true"></button>
+        <button type="button" aria-label="Show photo 2"></button>
+        <button type="button" aria-label="Show photo 3"></button>
+        <button type="button" aria-label="Show photo 4"></button>
+        <button type="button" aria-label="Show photo 5"></button>
+      </div>
     </div>
   </div>
 </section>
@@ -105,5 +131,42 @@
   <div class="container footer-bottom">© <span data-year></span> Mobile Mech · Auckland</div>
 </footer>
 <script src="assets/site.js"></script>
+<script>
+(function () {
+  const slideshow = document.querySelector('[data-slideshow]');
+  if (!slideshow) return;
+  const slides = Array.from(slideshow.querySelectorAll('.panel-paint-slide'));
+  const dots = Array.from(slideshow.querySelectorAll('.panel-paint-slide-dots button'));
+  const prev = slideshow.querySelector('.panel-paint-slide-prev');
+  const next = slideshow.querySelector('.panel-paint-slide-next');
+  let index = 0;
+  let timer;
+
+  function showSlide(nextIndex) {
+    index = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === index);
+      if (i === index) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  }
+
+  function restartTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => showSlide(index + 1), 5000);
+  }
+
+  prev.addEventListener('click', () => { showSlide(index - 1); restartTimer(); });
+  next.addEventListener('click', () => { showSlide(index + 1); restartTimer(); });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); restartTimer(); }));
+  slideshow.addEventListener('mouseenter', () => clearInterval(timer));
+  slideshow.addEventListener('mouseleave', restartTimer);
+  slideshow.addEventListener('focusin', () => clearInterval(timer));
+  slideshow.addEventListener('focusout', restartTimer);
+  showSlide(0);
+  restartTimer();
+}());
+</script>
 </body>
 </html>
