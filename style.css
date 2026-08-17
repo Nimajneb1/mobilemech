@@ -276,3 +276,15 @@ input:focus,textarea:focus,select:focus { outline:2px solid rgba(8,119,209,.25);
 .brand-list li { padding:.5rem .72rem; border:1px solid #cbd7df; border-radius:999px; color:var(--navy); background:var(--soft); font-size:.9rem; font-weight:800; }
 @media(max-width:900px){ .seo-intro-grid,.brands-specialties{grid-template-columns:1fr}.seo-service-grid{grid-template-columns:1fr 1fr} }
 @media(max-width:680px){ .seo-content .section-title h1{font-size:clamp(2rem,9vw,3rem)}.seo-service-grid{grid-template-columns:1fr}.seo-intro-grid{gap:.75rem}.brands-specialties{gap:1.2rem} }
+
+/* SEO internal-link sections — matches the existing simple card style */
+.seo-area-card { margin-top: .85rem; }
+.area-links { margin-top: .9rem !important; font-weight: 800; }
+.area-links a { color: var(--blue); text-decoration: none; }
+.area-links a:hover,.area-links a:focus-visible { text-decoration: underline; }
+.related-services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.85rem; }
+.related-service-link { display:flex; flex-direction:column; gap:.35rem; padding:1.1rem 1.2rem; border:1px solid var(--line); border-radius:10px; background:#fff; text-decoration:none; color:var(--navy); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.related-service-link:hover,.related-service-link:focus-visible { transform:translateY(-2px); border-color:var(--blue); box-shadow:0 8px 22px rgba(0,31,51,.07); }
+.related-service-link span { color:var(--blue); font-size:.9rem; font-weight:800; }
+@media(max-width:900px){.related-services-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.related-services-grid{grid-template-columns:1fr}}
