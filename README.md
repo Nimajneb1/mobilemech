@@ -1,39 +1,39 @@
-# Mobile Mech rebuilt static site — focused launch-pass version
+# Mobile Mech rebuild starter
 
-Open `index.html` to review the site.
+This is a static, responsive rebuild starter for `mobilemech.co.nz`.
 
-## Pages
-- Home
-- Services
-- WoF concierge
-- EV battery health enquiries
-- Gallery
-- Videos
-- Blog
-- Booking
-- Contact
-- Terms
+## Included pages
 
-## Accuracy review
-- Contact details, opening hours, service-package prices and inclusions, WoF concierge wording, diagnostic services, pre-purchase inspections, tyres and wheel alignment, headlight restoration, and the existing terms were checked against the current Mobile Mech website.
-- The owner-requested Capricorn member image, van photos, Mobile Mech logo, synopsis PDF and selected video links are taken from the supplied resource folder.
-- The extra `Mobile · Honest · Convenient` footer strip has been removed because it was not part of the original live website.
-- WoF pre-check references remain removed, in line with the owner's instructions.
-- “WoF” styling is used consistently across customer-facing copy.
-- The homepage retains the full-width authentic van-photo treatment requested during review.
-- Service-package headings are clearer customer-facing labels, with key inclusions shown by default and full details available where needed.
-- The EV page repeats the AVILOO availability message only where it helps the customer take the next step.
-- The second blog article is presented as background on the mechanic rather than internal submission history.
-- Page titles and descriptions have received a search-visibility pass.
-- The supplied archive did not contain the old AVILOO image or an approved Launch logo file. To avoid homemade brand approximations, the site loads an official AVILOO press image and the official Launch logo from their respective websites. Download and host approved local copies before production if permission and final assets are confirmed.
-- EV copy is deliberately phrased as an enquiry: the site asks visitors to confirm whether AVILOO testing is available for their vehicle rather than promising availability.
+- `index.html` — cleaner home page with clear calls to action
+- `services.html` — service packages and other service descriptions
+- `wof.html` — dedicated WOF pre-check and repair page
+- `gallery.html` — gallery shell with prompts for genuine job photos
+- `contact.html` — direct contact details and an email-prefill quote form
+- `terms.html` — migration draft of the current terms for owner review
+- `assets/style.css` — all styling
+- `assets/site.js` — mobile navigation, current year and quote-email helper
+- `assets/mobile-mech-banner.png` — converted from the supplied AVIF banner
+- `robots.txt` and `sitemap.xml` — basic search-engine files
 
-## Before publishing
-The business owner should confirm current prices, Capricorn membership, AVILOO availability, payment options, the six-month workmanship warranty, the six-month vehicle-photo retention statement and the terms wording. Legal terms and privacy wording should receive an owner or professional review before publication.
+## Important before launch
 
-## Forms
-The booking and contact forms submit directly to `nzmobilemech@gmail.com` through FormSubmit. They no longer rely on the visitor having an email application configured. Each form includes a source-page field, a honeypot field and a redirect to `thank-you.html`.
+1. **Review every claim and price.** The starter uses information shown on the current website, but the owner needs to confirm it is still accurate.
+2. **Review the terms carefully.** The terms page is a migration draft. Publish a proper privacy policy as well.
+3. **Replace remote Wix image links.** The logo, oil-filter hero and van photo currently load from the existing Wix site. Download the approved originals and update the URLs in the HTML files so the rebuilt site controls its own assets.
+4. **Connect a real form service.** The contact form currently opens a pre-filled email. Replace this with a form backend before launch if web submissions are required.
+5. **Add real project photos.** The gallery intentionally includes placeholders. Genuine photos of completed work will materially improve credibility.
+6. **Confirm analytics and advertising tags.** Add the correct GA4 / Google Ads tags only after the final hosting approach is known.
 
-## Website form activation
+## Local preview
 
-The booking and contact forms now submit directly to `nzmobilemech@gmail.com` through FormSubmit. After the first live test submission, open the activation email sent to that Gmail inbox and approve the form endpoint. Until that one-time activation step is completed, FormSubmit will not deliver public enquiries.
+Open `index.html` directly in a browser, or run a simple local server from this folder:
+
+```bash
+python -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
+
+## Suggested next development step
+
+After the business owner has confirmed the wording and service priorities, refine the home-page copy and replace the temporary email-prefill form with the chosen booking workflow.
