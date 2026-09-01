@@ -165,3 +165,28 @@ if (requestedRegion) {
     if (!input.value) input.value = requestedRegion;
   });
 }
+
+// ===== Simple visitor email alert (5+ seconds) =====
+(function () {
+  const EMAIL = "nzmobilemech@gmail.com";
+  let sent = false;
+
+  setTimeout(function () {
+    if (sent) return;
+    sent = true;
+
+    const formData = new FormData();
+    formData.append("_subject", "🔔 New website visitor – Mobile Mech");
+    formData.append("_template", "table");
+    formData.append("Page", window.location.href);
+    formData.append("Time (NZ)", new Date().toLocaleString("en-NZ", { timeZone: "Pacific/Auckland" }));
+    formData.append("Came from", document.referrer || "Direct / unknown");
+    formData.append("Device", navigator.userAgent || "Unknown");
+
+    // Send the email
+    fetch("https://formsubmit.co/ajax/" + EMAIL, {
+      method: "POST",
+      body: formData
+    }).catch(function () {});
+  }, 5000); // 5 seconds
+})();
