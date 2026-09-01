@@ -119,7 +119,7 @@ if (serviceMapNode) {
           onEachFeature: (feature, layer) => {
             const { name, suburbs, label_lat: labelLat, label_lng: labelLng } = feature.properties;
             const bookingUrl = `booking.html?region=${encodeURIComponent(name)}`;
-            layer.bindPopup(`<div class="coverage-popup"><strong>${name}</strong><p>${suburbs}</p><a class="btn btn-primary" href="${bookingUrl}">Book in ${name}</a></div>`, {
+            layer.bindPopup(`<div class="coverage-popup"><strong>\( {name}</strong><p> \){suburbs}</p><a class="btn btn-primary" href="${bookingUrl}">Book in ${name}</a></div>`, {
               closeButton: true,
               offset: [0, -4]
             });
@@ -165,3 +165,28 @@ if (requestedRegion) {
     if (!input.value) input.value = requestedRegion;
   });
 }
+
+// ===== Simple visitor email alert (5+ seconds) =====
+(function () {
+  const EMAIL = "nzmobilemech@gmail.com";
+  let sent = false;
+
+  setTimeout(function () {
+    if (sent) return;
+    sent = true;
+
+    const formData = new FormData();
+    formData.append("_subject", "🔔 New website visitor – Mobile Mech");
+    formData.append("_template", "table");
+    formData.append("Page", window.location.href);
+    formData.append("Time (NZ)", new Date().toLocaleString("en-NZ", { timeZone: "Pacific/Auckland" }));
+    formData.append("Came from", document.referrer || "Direct / unknown");
+    formData.append("Device", navigator.userAgent || "Unknown");
+
+    // Send the email
+    fetch("https://formsubmit.co/ajax/" + EMAIL, {
+      method: "POST",
+      body: formData
+    }).catch(function () {});
+  }, 5000); // 5 seconds
+})();
