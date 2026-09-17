@@ -216,3 +216,52 @@ input:focus,textarea:focus,select:focus { outline:2px solid rgba(8,119,209,.25);
 @media(max-width:1100px){ .header-phone span{display:none}.nav-links a{padding-inline:.43rem}.brand strong{font-size:1rem}.brand small{font-size:.61rem}.service-card-grid{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:900px){ .coverage-grid{grid-template-columns:1fr}.coverage-map{min-height:470px} .quick-grid{grid-template-columns:repeat(2,1fr)}.quick-item{border-bottom:1px solid var(--line)}.quick-item:nth-child(2n){border-right:0}.quick-item:last-child{grid-column:1/-1;border-top:0;border-bottom:0} .navbar{min-height:76px}.brand img{width:60px;height:60px}.nav-links{position:fixed;top:76px;right:0;left:0;display:none;padding:.65rem 1rem .9rem;border-bottom:1px solid rgba(255,255,255,.13);background:var(--navy)}.nav-links.open{display:grid}.nav-links a{padding:.68rem 0}.mobile-toggle{display:grid;place-items:center}.header-phone span{display:inline}.hero{min-height:590px}.contact-grid,.booking-grid,.ev-grid{grid-template-columns:1fr}.service-intro-grid{grid-template-columns:1fr}.service-intro-grid img{height:280px}.blog-layout{grid-template-columns:1fr}.blog-index{position:static}.supplier-inner{grid-template-columns:220px minmax(0,1fr);gap:1.2rem}.footer-info{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:680px){ .coverage-copy{padding:1.25rem}.coverage-region{grid-template-columns:14px 1fr}.coverage-region>span:last-child{grid-column:2}.coverage-map-card{padding:.45rem}.coverage-map{min-height:430px}.coverage-map-status{right:.85rem;bottom:.85rem;left:.85rem;max-width:none} .container{width:min(100% - 1.25rem,var(--max))}.brand img{width:56px;height:56px}.brand strong{font-size:.9rem}.brand small{display:none}.header-actions{margin-left:auto;gap:.38rem}.header-phone span{display:none}.header-book{min-height:39px;padding:.56rem .68rem}.hero{min-height:560px;background:linear-gradient(90deg,rgba(0,14,25,.99) 0%,rgba(0,17,30,.94) 54%,rgba(0,16,29,.45) 100%),url('hero-home-real.jpg') 63% center/auto 100% no-repeat,var(--navy)}.hero-inner{padding:3.8rem 0}.hero h1{font-size:clamp(3.1rem,16vw,4.45rem)}.hero p:not(.eyebrow){max-width:345px;font-size:1.08rem}.hero-actions .btn{width:100%}.quick-grid{grid-template-columns:1fr}.quick-item{min-height:116px;grid-template-columns:58px 1fr;grid-template-rows:auto auto;column-gap:.72rem;place-content:center start;border-right:0;border-bottom:1px solid var(--line);text-align:left}.quick-item:last-child{grid-column:auto;border-top:0;border-bottom:0}.quick-icon{grid-row:1/3;height:auto;margin:0}.quick-icon svg{width:48px;height:48px}.section{padding:3.75rem 0}.split-title{grid-template-columns:1fr;gap:.2rem}.van-grid{display:grid;grid-template-columns:1fr;grid-template-rows:230px 150px 190px}.van-main{grid-row:auto}.service-card-grid,.package-grid,.steps,.gallery-grid,.video-grid{grid-template-columns:1fr}.service-card{min-height:auto}.steps div{border-right:0;border-bottom:1px solid var(--line)}.steps div:last-child{border-bottom:0}.contact-band-inner{min-height:290px;display:block;padding-block:2.4rem}.contact-lines{margin-top:1.25rem}.small-cta-inner{display:block;padding-block:1.2rem}.small-cta .btn{margin-top:.75rem}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.gallery-grid{grid-auto-rows:235px}.gallery-wide{grid-column:auto}.supplier-inner{grid-template-columns:1fr;gap:1rem}.capricorn-link{max-width:280px}.brand-strip{grid-template-columns:repeat(3,1fr);gap:.58rem}.brand-strip img{height:55px}.footer-info{grid-template-columns:1fr;gap:.8rem}.footer-main{display:block}.footer-links{justify-content:flex-start;gap:.62rem .8rem;margin-top:1rem}.pdf-preview-grid{grid-template-columns:1fr} }
+
+/* === Ranking optimisation additions (hero trust, why-choose, reviews) === */
+.hero-lead { max-width: 560px; margin-bottom: 1.1rem; color: #e8f0f6; font-size: 1.12rem; line-height: 1.55; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: .55rem 1.1rem; margin: 0 0 1.4rem; }
+.hero-trust .trust-item { color: #b8d4e8; font-size: .86rem; font-weight: 700; letter-spacing: .02em; }
+.trust-bar-section { padding: 1.6rem 0; background: var(--soft); border-bottom: 1px solid var(--line); }
+.trust-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
+.trust-stat { padding: .85rem .6rem; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.trust-stat strong { display: block; color: var(--navy); font-size: 1.15rem; font-weight: 900; letter-spacing: -.02em; }
+.trust-stat span { display: block; margin-top: .28rem; color: var(--muted); font-size: .82rem; font-weight: 600; }
+.why-choose-section { background: #fff; }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.6rem; }
+.why-card { padding: 1.35rem 1.15rem; background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); }
+.why-icon { font-size: 1.6rem; margin-bottom: .55rem; line-height: 1; }
+.why-card h3 { margin: 0 0 .4rem; font-size: 1.08rem; }
+.why-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+.reviews-section { background: var(--soft); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.review-card { margin: 0; padding: 1.35rem 1.2rem; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.review-stars { color: #f5a623; font-size: 1.05rem; letter-spacing: .08em; margin-bottom: .55rem; }
+.review-card p { margin: 0 0 .85rem; color: var(--ink); font-size: .98rem; line-height: 1.5; }
+.review-card footer { color: var(--muted); font-size: .84rem; font-weight: 700; }
+.reviews-note { margin-top: 1.2rem; color: var(--muted); font-size: .88rem; font-style: italic; }
+.contact-band .btn { color: #fff; }
+@media (max-width: 900px) {
+  .trust-bar { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .trust-bar { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .hero-trust { gap: .4rem .8rem; }
+  .hero-trust .trust-item { font-size: .8rem; }
+}
+
+/* Reviews refinements */
+.reviews-rating { margin: .4rem 0 0; color: var(--muted); font-size: 1rem; }
+.reviews-rating strong { color: var(--navy); font-weight: 900; }
+.review-title { margin: 0 0 .35rem; color: var(--navy); font-size: 1.02rem; font-weight: 800; }
+.reviews-grid { grid-template-columns: repeat(3, 1fr); }
+.reviews-note a { color: var(--blue-dark); font-weight: 800; }
+.reviews-note a:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+}
